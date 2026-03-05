@@ -1,0 +1,11 @@
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\bin\Release\net9.0\SareeGrace.Domain.deps.json
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\bin\Release\net9.0\SareeGrace.Domain.dll
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\bin\Release\net9.0\SareeGrace.Domain.pdb
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\SareeGrace.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\SareeGrace.Domain.AssemblyInfoInputs.cache
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\SareeGrace.Domain.AssemblyInfo.cs
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\SareeGrace.Domain.csproj.CoreCompileInputs.cache
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\SareeGrace.Domain.dll
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\refint\SareeGrace.Domain.dll
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\SareeGrace.Domain.pdb
+C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\VibeCoding_SareeWeb\src\SareeGrace.Domain\obj\Release\net9.0\ref\SareeGrace.Domain.dll
