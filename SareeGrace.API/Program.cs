@@ -84,7 +84,8 @@ try
                     "http://localhost:5173",
                     "http://localhost:3000",
                     "http://localhost:5174",
-                    "https://sareegrace.netlify.app")
+                    "https://sareegrace.netlify.app",
+                    "https://saree-frontend.netlify.app")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
