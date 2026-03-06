@@ -1891,3 +1891,1113 @@ ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
 2026-03-05 17:37:56.737 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
 2026-03-05 17:37:56.738 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 32.0077 ms
 2026-03-05 17:37:56.741 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 39.1851ms
+2026-03-05 18:09:57.188 +05:30 [INF] Starting SareeGrace API...
+2026-03-05 18:10:01.494 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-05 18:10:01.519 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-03-05 18:10:01.551 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-03-05 18:10:01.641 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-03-05 18:10:01.654 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-05 18:10:01.659 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-05 18:10:01.675 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-05 18:10:01.698 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-03-05 18:10:01.716 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-03-05 18:10:01.721 +05:30 [INF] Database migrated successfully.
+2026-03-05 18:10:02.077 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[Email], [u].[EmailVerified], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Email] = N'admin@sareegrace.com'
+2026-03-05 18:10:02.897 +05:30 [INF] SareeGrace API started on 
+2026-03-05 18:10:02.986 +05:30 [INF] User profile is available. Using 'C:\Users\akhilesh.kulkarni\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-05 18:10:03.418 +05:30 [INF] Now listening on: https://localhost:5001
+2026-03-05 18:10:03.421 +05:30 [INF] Now listening on: http://localhost:5000
+2026-03-05 18:10:03.559 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-05 18:10:03.566 +05:30 [INF] Hosting environment: Development
+2026-03-05 18:10:03.571 +05:30 [INF] Content root path: C:\Users\akhilesh.kulkarni\Downloads\VibeCoding_SareeWeb\saree-backend\SareeGrace.API
+2026-03-05 18:10:36.394 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/auth/me - null null
+2026-03-05 18:10:36.553 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - null null
+2026-03-05 18:10:36.554 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - null null
+2026-03-05 18:10:36.571 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - null null
+2026-03-05 18:10:36.578 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:10:36.915 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:10:36.915 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:10:36.915 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:36.915 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:10:36.925 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:36.955 +05:30 [INF] Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUser() on controller SareeGrace.API.Controllers.AuthController (SareeGrace.API).
+2026-03-05 18:10:36.954 +05:30 [INF] Route matched with {action = "GetNewArrivals", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNewArrivals(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:36.954 +05:30 [INF] Route matched with {action = "GetSpecialOffers", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSpecialOffers(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:36.954 +05:30 [INF] Route matched with {action = "GetFeaturedProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFeaturedProducts(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:36.954 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:10:37.238 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-03-05 18:10:37.371 +05:30 [INF] Executed DbCommand (165ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[Email], [u].[EmailVerified], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-05 18:10:37.432 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsNewArrival] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:37.432 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsSpecialOffer] = CAST(1 AS bit) AND [p].[StockCount] > 0
+    ORDER BY [p].[DiscountPercent] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[DiscountPercent] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:37.433 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsFeatured] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:37.441 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:10:37.449 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.UserDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:37.489 +05:30 [INF] Executed action SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API) in 527.4954ms
+2026-03-05 18:10:37.503 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/auth/me - null null
+2026-03-05 18:10:37.504 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.508 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.511 +05:30 [INF] Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUser() on controller SareeGrace.API.Controllers.AuthController (SareeGrace.API).
+2026-03-05 18:10:37.516 +05:30 [INF] HTTP GET /api/auth/me responded 200 in 952.5316 ms
+2026-03-05 18:10:37.525 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[Email], [u].[EmailVerified], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-05 18:10:37.539 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/auth/me - 200 null application/json; charset=utf-8 1154.4961ms
+2026-03-05 18:10:37.541 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.UserDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:37.556 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.556 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.561 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.567 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/cart - null null
+2026-03-05 18:10:37.597 +05:30 [INF] Executed action SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API) in 79.272ms
+2026-03-05 18:10:37.604 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.607 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:37.607 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.614 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API) in 649.5146ms
+2026-03-05 18:10:37.614 +05:30 [INF] HTTP GET /api/auth/me responded 200 in 106.6948 ms
+2026-03-05 18:10:37.615 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API) in 654.4282ms
+2026-03-05 18:10:37.617 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:10:37.617 +05:30 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller SareeGrace.API.Controllers.CartController (SareeGrace.API).
+2026-03-05 18:10:37.617 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API) in 648.7538ms
+2026-03-05 18:10:37.618 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 625.467ms
+2026-03-05 18:10:37.621 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/auth/me - 200 null application/json; charset=utf-8 117.949ms
+2026-03-05 18:10:37.622 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:10:37.624 +05:30 [INF] HTTP GET /api/products/special-offers responded 200 in 971.5760 ms
+2026-03-05 18:10:37.626 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/wishlist - null null
+2026-03-05 18:10:37.631 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:10:37.634 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:37.642 +05:30 [INF] HTTP GET /api/products/new-arrivals responded 200 in 988.1202 ms
+2026-03-05 18:10:37.654 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - 200 null application/json; charset=utf-8 1131.9078ms
+2026-03-05 18:10:37.659 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:37.660 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/auth/me - null null
+2026-03-05 18:10:37.660 +05:30 [INF] HTTP GET /api/products/featured responded 200 in 1010.3336 ms
+2026-03-05 18:10:37.662 +05:30 [INF] HTTP GET /api/categories responded 200 in 995.4814 ms
+2026-03-05 18:10:37.665 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - 200 null application/json; charset=utf-8 1094.3527ms
+2026-03-05 18:10:37.702 +05:30 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWishlist() on controller SareeGrace.API.Controllers.WishlistController (SareeGrace.API).
+2026-03-05 18:10:37.702 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.705 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - 200 null application/json; charset=utf-8 1182.1999ms
+2026-03-05 18:10:37.708 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 1130.415ms
+2026-03-05 18:10:37.671 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - null null
+2026-03-05 18:10:37.713 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - null null
+2026-03-05 18:10:37.715 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:10:37.719 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [CartItems] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [c].[UserId] = @__userId_0
+ORDER BY [c].[Id], [p].[Id]
+2026-03-05 18:10:37.721 +05:30 [INF] Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUser() on controller SareeGrace.API.Controllers.AuthController (SareeGrace.API).
+2026-03-05 18:10:37.738 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:10:37.742 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:10:37.747 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:37.756 +05:30 [INF] Route matched with {action = "GetSpecialOffers", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSpecialOffers(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:37.767 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [WishlistItems] AS [w]
+INNER JOIN [Products] AS [p] ON [w].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [w].[UserId] = @__userId_0
+ORDER BY [w].[CreatedAt] DESC, [w].[Id], [p].[Id]
+2026-03-05 18:10:37.759 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[Email], [u].[EmailVerified], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-05 18:10:37.761 +05:30 [INF] Route matched with {action = "GetNewArrivals", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNewArrivals(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:37.765 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:10:37.757 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.CartSummaryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:37.773 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsSpecialOffer] = CAST(1 AS bit) AND [p].[StockCount] > 0
+    ORDER BY [p].[DiscountPercent] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[DiscountPercent] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:37.773 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.WishlistItemDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.775 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.UserDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:37.781 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsNewArrival] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:37.785 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:10:37.788 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.788 +05:30 [INF] Executed action SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API) in 159.378ms
+2026-03-05 18:10:37.791 +05:30 [INF] Executed action SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API) in 36.8237ms
+2026-03-05 18:10:37.795 +05:30 [INF] Executed action SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API) in 75.7716ms
+2026-03-05 18:10:37.796 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.800 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API) in 33.2709ms
+2026-03-05 18:10:37.802 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:37.803 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.804 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.806 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:37.807 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API) in 30.7715ms
+2026-03-05 18:10:37.809 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:10:37.810 +05:30 [INF] HTTP GET /api/cart responded 200 in 204.5478 ms
+2026-03-05 18:10:37.813 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 33.0781ms
+2026-03-05 18:10:37.815 +05:30 [INF] HTTP GET /api/auth/me responded 200 in 112.6216 ms
+2026-03-05 18:10:37.816 +05:30 [INF] HTTP GET /api/wishlist responded 200 in 158.0557 ms
+2026-03-05 18:10:37.829 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/wishlist - 200 null application/json; charset=utf-8 203.1205ms
+2026-03-05 18:10:37.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/auth/me - 200 null application/json; charset=utf-8 166.7808ms
+2026-03-05 18:10:37.819 +05:30 [INF] HTTP GET /api/products/special-offers responded 200 in 81.5812 ms
+2026-03-05 18:10:37.827 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - null null
+2026-03-05 18:10:37.822 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/cart - 200 null application/json; charset=utf-8 254.9019ms
+2026-03-05 18:10:37.835 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/cart - null null
+2026-03-05 18:10:37.818 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:10:37.823 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:37.841 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/auth/me - null null
+2026-03-05 18:10:37.856 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - 200 null application/json; charset=utf-8 185.5756ms
+2026-03-05 18:10:37.861 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/wishlist - null null
+2026-03-05 18:10:37.861 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:10:37.870 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:37.871 +05:30 [INF] HTTP GET /api/products/new-arrivals responded 200 in 129.7191 ms
+2026-03-05 18:10:37.872 +05:30 [INF] HTTP GET /api/categories responded 200 in 125.4771 ms
+2026-03-05 18:10:37.876 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.883 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:37.884 +05:30 [INF] Route matched with {action = "GetFeaturedProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFeaturedProducts(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:37.885 +05:30 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller SareeGrace.API.Controllers.CartController (SareeGrace.API).
+2026-03-05 18:10:37.887 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - 200 null application/json; charset=utf-8 174.0602ms
+2026-03-05 18:10:37.891 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 175.5553ms
+2026-03-05 18:10:37.898 +05:30 [INF] Route matched with {action = "GetCurrentUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUser() on controller SareeGrace.API.Controllers.AuthController (SareeGrace.API).
+2026-03-05 18:10:37.899 +05:30 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWishlist() on controller SareeGrace.API.Controllers.WishlistController (SareeGrace.API).
+2026-03-05 18:10:37.905 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsFeatured] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:37.905 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [CartItems] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [c].[UserId] = @__userId_0
+ORDER BY [c].[Id], [p].[Id]
+2026-03-05 18:10:37.918 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AvatarUrl], [u].[CreatedAt], [u].[Email], [u].[EmailVerified], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[UpdatedAt]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-05 18:10:37.920 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [WishlistItems] AS [w]
+INNER JOIN [Products] AS [p] ON [w].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [w].[UserId] = @__userId_0
+ORDER BY [w].[CreatedAt] DESC, [w].[Id], [p].[Id]
+2026-03-05 18:10:37.922 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.924 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.CartSummaryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:37.929 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.UserDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:37.932 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.WishlistItemDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:37.935 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API) in 33.8815ms
+2026-03-05 18:10:37.937 +05:30 [INF] Executed action SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API) in 33.7086ms
+2026-03-05 18:10:37.939 +05:30 [INF] Executed action SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API) in 23.4405ms
+2026-03-05 18:10:37.941 +05:30 [INF] Executed action SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API) in 22.8407ms
+2026-03-05 18:10:37.941 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/cart - null null
+2026-03-05 18:10:37.943 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:10:37.944 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:37.949 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/wishlist - null null
+2026-03-05 18:10:37.950 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AuthController.GetCurrentUser (SareeGrace.API)'
+2026-03-05 18:10:37.951 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:37.955 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:37.956 +05:30 [INF] HTTP GET /api/products/featured responded 200 in 95.0561 ms
+2026-03-05 18:10:37.969 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - 200 null application/json; charset=utf-8 142.4174ms
+2026-03-05 18:10:37.963 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:37.965 +05:30 [INF] HTTP GET /api/auth/me responded 200 in 89.3018 ms
+2026-03-05 18:10:37.966 +05:30 [INF] HTTP GET /api/wishlist responded 200 in 83.2465 ms
+2026-03-05 18:10:37.967 +05:30 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller SareeGrace.API.Controllers.CartController (SareeGrace.API).
+2026-03-05 18:10:37.957 +05:30 [INF] HTTP GET /api/cart responded 200 in 87.5707 ms
+2026-03-05 18:10:37.973 +05:30 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWishlist() on controller SareeGrace.API.Controllers.WishlistController (SareeGrace.API).
+2026-03-05 18:10:37.976 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/auth/me - 200 null application/json; charset=utf-8 134.8005ms
+2026-03-05 18:10:37.982 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/wishlist - 200 null application/json; charset=utf-8 120.5563ms
+2026-03-05 18:10:37.984 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/cart - 200 null application/json; charset=utf-8 148.9637ms
+2026-03-05 18:10:37.996 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [CartItems] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [c].[UserId] = @__userId_0
+ORDER BY [c].[Id], [p].[Id]
+2026-03-05 18:10:37.999 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [WishlistItems] AS [w]
+INNER JOIN [Products] AS [p] ON [w].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [w].[UserId] = @__userId_0
+ORDER BY [w].[CreatedAt] DESC, [w].[Id], [p].[Id]
+2026-03-05 18:10:38.020 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.CartSummaryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:38.022 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.WishlistItemDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:38.024 +05:30 [INF] Executed action SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API) in 41.1971ms
+2026-03-05 18:10:38.026 +05:30 [INF] Executed action SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API) in 34.9994ms
+2026-03-05 18:10:38.031 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:38.028 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/cart - null null
+2026-03-05 18:10:38.032 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/wishlist - null null
+2026-03-05 18:10:38.034 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:38.036 +05:30 [INF] HTTP GET /api/cart responded 200 in 80.9515 ms
+2026-03-05 18:10:38.039 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:38.043 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:38.043 +05:30 [INF] HTTP GET /api/wishlist responded 200 in 80.8715 ms
+2026-03-05 18:10:38.047 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/cart - 200 null application/json; charset=utf-8 106.2342ms
+2026-03-05 18:10:38.049 +05:30 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCart() on controller SareeGrace.API.Controllers.CartController (SareeGrace.API).
+2026-03-05 18:10:38.051 +05:30 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWishlist() on controller SareeGrace.API.Controllers.WishlistController (SareeGrace.API).
+2026-03-05 18:10:38.054 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/wishlist - 200 null application/json; charset=utf-8 104.7518ms
+2026-03-05 18:10:38.067 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [CartItems] AS [c]
+INNER JOIN [Products] AS [p] ON [c].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [c].[UserId] = @__userId_0
+ORDER BY [c].[Id], [p].[Id]
+2026-03-05 18:10:38.069 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UserId], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM [WishlistItems] AS [w]
+INNER JOIN [Products] AS [p] ON [w].[ProductId] = [p].[Id]
+LEFT JOIN [ProductImages] AS [p0] ON [p].[Id] = [p0].[ProductId]
+WHERE [w].[UserId] = @__userId_0
+ORDER BY [w].[CreatedAt] DESC, [w].[Id], [p].[Id]
+2026-03-05 18:10:38.073 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.CartSummaryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:38.076 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.WishlistItemDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:38.077 +05:30 [INF] Executed action SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API) in 14.4493ms
+2026-03-05 18:10:38.080 +05:30 [INF] Executed action SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API) in 13.791ms
+2026-03-05 18:10:38.081 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CartController.GetCart (SareeGrace.API)'
+2026-03-05 18:10:38.085 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.WishlistController.GetWishlist (SareeGrace.API)'
+2026-03-05 18:10:38.086 +05:30 [INF] HTTP GET /api/cart responded 200 in 46.9560 ms
+2026-03-05 18:10:38.087 +05:30 [INF] HTTP GET /api/wishlist responded 200 in 45.1412 ms
+2026-03-05 18:10:38.091 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/cart - 200 null application/json; charset=utf-8 62.988ms
+2026-03-05 18:10:38.093 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/wishlist - 200 null application/json; charset=utf-8 60.8975ms
+2026-03-05 18:10:46.888 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - null null
+2026-03-05 18:10:46.896 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:46.903 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:46.957 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:10:46.987 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([o].[TotalAmount]), 0.0)
+FROM [Orders] AS [o]
+WHERE [o].[PaymentStatus] = N'Paid'
+2026-03-05 18:10:47.006 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Customer'
+2026-03-05 18:10:47.021 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-03-05 18:10:47.048 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[StockCount] < 5
+2026-03-05 18:10:47.069 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+WHERE [o].[OrderStatus] IN (N'Pending', N'Confirmed')
+2026-03-05 18:10:47.106 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT TOP(@__p_0) [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:10:47.115 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.DashboardDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:47.131 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API) in 224.2985ms
+2026-03-05 18:10:47.133 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:47.135 +05:30 [INF] HTTP GET /api/admin/dashboard responded 200 in 242.2021 ms
+2026-03-05 18:10:47.138 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - null null
+2026-03-05 18:10:47.139 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - 200 null application/json; charset=utf-8 251.8361ms
+2026-03-05 18:10:47.149 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:47.155 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:47.160 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:10:47.166 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([o].[TotalAmount]), 0.0)
+FROM [Orders] AS [o]
+WHERE [o].[PaymentStatus] = N'Paid'
+2026-03-05 18:10:47.170 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Customer'
+2026-03-05 18:10:47.174 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-03-05 18:10:47.180 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[StockCount] < 5
+2026-03-05 18:10:47.184 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+WHERE [o].[OrderStatus] IN (N'Pending', N'Confirmed')
+2026-03-05 18:10:47.189 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT TOP(@__p_0) [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:10:47.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.DashboardDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:47.197 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API) in 39.6183ms
+2026-03-05 18:10:47.199 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:47.201 +05:30 [INF] HTTP GET /api/admin/dashboard responded 200 in 52.3305 ms
+2026-03-05 18:10:47.204 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - 200 null application/json; charset=utf-8 66.1224ms
+2026-03-05 18:10:48.444 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - null null
+2026-03-05 18:10:48.445 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:10:48.451 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:48.453 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:48.454 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:10:48.458 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:10:48.461 +05:30 [INF] Route matched with {action = "GetProducts", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(SareeGrace.Application.DTOs.ProductFilterDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:48.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:48.471 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 16.2407ms
+2026-03-05 18:10:48.472 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:48.474 +05:30 [INF] HTTP GET /api/categories responded 200 in 21.9642 ms
+2026-03-05 18:10:48.477 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:10:48.477 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 32.2792ms
+2026-03-05 18:10:48.483 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:48.488 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:10:48.494 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:10:48.496 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-03-05 18:10:48.501 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:10:48.503 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 11.8334ms
+2026-03-05 18:10:48.505 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:10:48.506 +05:30 [INF] HTTP GET /api/categories responded 200 in 23.4567 ms
+2026-03-05 18:10:48.508 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 31.0236ms
+2026-03-05 18:10:48.532 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:48.547 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:48.555 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API) in 91.2919ms
+2026-03-05 18:10:48.564 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - null null
+2026-03-05 18:10:48.567 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:48.571 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:48.572 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 121.0616 ms
+2026-03-05 18:10:48.574 +05:30 [INF] Route matched with {action = "GetProducts", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(SareeGrace.Application.DTOs.ProductFilterDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:48.577 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 132.6014ms
+2026-03-05 18:10:48.585 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-03-05 18:10:48.591 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:48.601 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:48.604 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API) in 21.6862ms
+2026-03-05 18:10:48.606 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:48.607 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 36.9841 ms
+2026-03-05 18:10:48.610 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 45.9449ms
+2026-03-05 18:10:53.926 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/be7a6642-acda-4068-a9b3-d6c468d863eb - null null
+2026-03-05 18:10:53.933 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetProduct (SareeGrace.API)'
+2026-03-05 18:10:53.942 +05:30 [INF] Route matched with {action = "GetProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProduct(System.Guid) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:54.001 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AverageRating], [s].[BasePrice], [s].[BlouseLength], [s].[CategoryId], [s].[Color], [s].[CreatedAt], [s].[Description], [s].[DiscountPercent], [s].[FabricType], [s].[HasBlousePiece], [s].[IsActive], [s].[IsDeleted], [s].[IsFeatured], [s].[IsNewArrival], [s].[IsSpecialOffer], [s].[LastStockUpdate], [s].[Length], [s].[ManufactureDate], [s].[Name], [s].[Occasion], [s].[Pattern], [s].[ReviewCount], [s].[SKU], [s].[ShortDescription], [s].[Slug], [s].[StockCount], [s].[UpdatedAt], [s].[WashCare], [s].[Weight], [s].[Width], [s].[Id0], [s].[Description0], [s].[DisplayOrder], [s].[ImageUrl], [s].[IsActive0], [s].[Name0], [s].[ParentCategoryId], [s].[Slug0], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [c].[Id] AS [Id0], [c].[Description] AS [Description0], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive] AS [IsActive0], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Slug] AS [Slug0]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [s]
+LEFT JOIN [ProductImages] AS [p0] ON [s].[Id] = [p0].[ProductId]
+ORDER BY [s].[Id], [s].[Id0], [p0].[DisplayOrder]
+2026-03-05 18:10:54.017 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.ProductDetailDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:54.041 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetProduct (SareeGrace.API) in 93.587ms
+2026-03-05 18:10:54.052 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetProduct (SareeGrace.API)'
+2026-03-05 18:10:54.054 +05:30 [INF] HTTP GET /api/products/be7a6642-acda-4068-a9b3-d6c468d863eb responded 200 in 121.0844 ms
+2026-03-05 18:10:54.057 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/be7a6642-acda-4068-a9b3-d6c468d863eb - 200 null application/json; charset=utf-8 131.4863ms
+2026-03-05 18:10:54.086 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/admin/products/be7a6642-acda-4068-a9b3-d6c468d863eb - application/json 503
+2026-03-05 18:10:54.090 +05:30 [INF] CORS policy execution successful.
+2026-03-05 18:10:54.092 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.UpdateProduct (SareeGrace.API)'
+2026-03-05 18:10:54.108 +05:30 [INF] Route matched with {action = "UpdateProduct", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduct(System.Guid, SareeGrace.Application.DTOs.UpdateProductDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:54.227 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2026-03-05 18:10:54.452 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (Size = 300), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Products] SET [IsNewArrival] = @p0, [Slug] = @p1, [UpdatedAt] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2026-03-05 18:10:54.484 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AverageRating], [s].[BasePrice], [s].[BlouseLength], [s].[CategoryId], [s].[Color], [s].[CreatedAt], [s].[Description], [s].[DiscountPercent], [s].[FabricType], [s].[HasBlousePiece], [s].[IsActive], [s].[IsDeleted], [s].[IsFeatured], [s].[IsNewArrival], [s].[IsSpecialOffer], [s].[LastStockUpdate], [s].[Length], [s].[ManufactureDate], [s].[Name], [s].[Occasion], [s].[Pattern], [s].[ReviewCount], [s].[SKU], [s].[ShortDescription], [s].[Slug], [s].[StockCount], [s].[UpdatedAt], [s].[WashCare], [s].[Weight], [s].[Width], [s].[Id0], [s].[Description0], [s].[DisplayOrder], [s].[ImageUrl], [s].[IsActive0], [s].[Name0], [s].[ParentCategoryId], [s].[Slug0], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [c].[Id] AS [Id0], [c].[Description] AS [Description0], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive] AS [IsActive0], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Slug] AS [Slug0]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [s]
+LEFT JOIN [ProductImages] AS [p0] ON [s].[Id] = [p0].[ProductId]
+ORDER BY [s].[Id], [s].[Id0], [p0].[DisplayOrder]
+2026-03-05 18:10:54.487 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.ProductDetailDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:54.492 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.UpdateProduct (SareeGrace.API) in 337.3395ms
+2026-03-05 18:10:54.496 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.UpdateProduct (SareeGrace.API)'
+2026-03-05 18:10:54.497 +05:30 [INF] HTTP PUT /api/admin/products/be7a6642-acda-4068-a9b3-d6c468d863eb responded 200 in 407.6746 ms
+2026-03-05 18:10:54.499 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/admin/products/be7a6642-acda-4068-a9b3-d6c468d863eb - 200 null application/json; charset=utf-8 413.4263ms
+2026-03-05 18:10:54.508 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - null null
+2026-03-05 18:10:54.554 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:54.557 +05:30 [INF] Route matched with {action = "GetProducts", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(SareeGrace.Application.DTOs.ProductFilterDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:54.570 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-03-05 18:10:54.577 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:54.591 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:54.600 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API) in 39.9203ms
+2026-03-05 18:10:54.603 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:54.604 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 50.4225 ms
+2026-03-05 18:10:54.606 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 97.517ms
+2026-03-05 18:10:55.453 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/be7a6642-acda-4068-a9b3-d6c468d863eb - null null
+2026-03-05 18:10:55.464 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetProduct (SareeGrace.API)'
+2026-03-05 18:10:55.467 +05:30 [INF] Route matched with {action = "GetProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProduct(System.Guid) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:10:55.472 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AverageRating], [s].[BasePrice], [s].[BlouseLength], [s].[CategoryId], [s].[Color], [s].[CreatedAt], [s].[Description], [s].[DiscountPercent], [s].[FabricType], [s].[HasBlousePiece], [s].[IsActive], [s].[IsDeleted], [s].[IsFeatured], [s].[IsNewArrival], [s].[IsSpecialOffer], [s].[LastStockUpdate], [s].[Length], [s].[ManufactureDate], [s].[Name], [s].[Occasion], [s].[Pattern], [s].[ReviewCount], [s].[SKU], [s].[ShortDescription], [s].[Slug], [s].[StockCount], [s].[UpdatedAt], [s].[WashCare], [s].[Weight], [s].[Width], [s].[Id0], [s].[Description0], [s].[DisplayOrder], [s].[ImageUrl], [s].[IsActive0], [s].[Name0], [s].[ParentCategoryId], [s].[Slug0], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [c].[Id] AS [Id0], [c].[Description] AS [Description0], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive] AS [IsActive0], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Slug] AS [Slug0]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [s]
+LEFT JOIN [ProductImages] AS [p0] ON [s].[Id] = [p0].[ProductId]
+ORDER BY [s].[Id], [s].[Id0], [p0].[DisplayOrder]
+2026-03-05 18:10:55.477 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.ProductDetailDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:55.479 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetProduct (SareeGrace.API) in 10.2013ms
+2026-03-05 18:10:55.482 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetProduct (SareeGrace.API)'
+2026-03-05 18:10:55.484 +05:30 [INF] HTTP GET /api/products/be7a6642-acda-4068-a9b3-d6c468d863eb responded 200 in 20.0819 ms
+2026-03-05 18:10:55.486 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/be7a6642-acda-4068-a9b3-d6c468d863eb - 200 null application/json; charset=utf-8 32.8089ms
+2026-03-05 18:10:55.493 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/admin/products/be7a6642-acda-4068-a9b3-d6c468d863eb - application/json 504
+2026-03-05 18:10:55.498 +05:30 [INF] CORS policy execution successful.
+2026-03-05 18:10:55.499 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.UpdateProduct (SareeGrace.API)'
+2026-03-05 18:10:55.501 +05:30 [INF] Route matched with {action = "UpdateProduct", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduct(System.Guid, SareeGrace.Application.DTOs.UpdateProductDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:55.508 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__p_0
+2026-03-05 18:10:55.519 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (Size = 300), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Products] SET [IsNewArrival] = @p0, [Slug] = @p1, [UpdatedAt] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2026-03-05 18:10:55.525 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AverageRating], [s].[BasePrice], [s].[BlouseLength], [s].[CategoryId], [s].[Color], [s].[CreatedAt], [s].[Description], [s].[DiscountPercent], [s].[FabricType], [s].[HasBlousePiece], [s].[IsActive], [s].[IsDeleted], [s].[IsFeatured], [s].[IsNewArrival], [s].[IsSpecialOffer], [s].[LastStockUpdate], [s].[Length], [s].[ManufactureDate], [s].[Name], [s].[Occasion], [s].[Pattern], [s].[ReviewCount], [s].[SKU], [s].[ShortDescription], [s].[Slug], [s].[StockCount], [s].[UpdatedAt], [s].[WashCare], [s].[Weight], [s].[Width], [s].[Id0], [s].[Description0], [s].[DisplayOrder], [s].[ImageUrl], [s].[IsActive0], [s].[Name0], [s].[ParentCategoryId], [s].[Slug0], [p0].[Id], [p0].[AltText], [p0].[DisplayOrder], [p0].[ImageUrl], [p0].[IsPrimary], [p0].[ProductId], [p0].[ThumbnailUrl]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width], [c].[Id] AS [Id0], [c].[Description] AS [Description0], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive] AS [IsActive0], [c].[Name] AS [Name0], [c].[ParentCategoryId], [c].[Slug] AS [Slug0]
+    FROM [Products] AS [p]
+    INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [s]
+LEFT JOIN [ProductImages] AS [p0] ON [s].[Id] = [p0].[ProductId]
+ORDER BY [s].[Id], [s].[Id0], [p0].[DisplayOrder]
+2026-03-05 18:10:55.530 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.ProductDetailDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:55.532 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.UpdateProduct (SareeGrace.API) in 27.8371ms
+2026-03-05 18:10:55.534 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.UpdateProduct (SareeGrace.API)'
+2026-03-05 18:10:55.535 +05:30 [INF] HTTP PUT /api/admin/products/be7a6642-acda-4068-a9b3-d6c468d863eb responded 200 in 37.7891 ms
+2026-03-05 18:10:55.539 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5000/api/admin/products/be7a6642-acda-4068-a9b3-d6c468d863eb - 200 null application/json; charset=utf-8 46.3152ms
+2026-03-05 18:10:55.548 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - null null
+2026-03-05 18:10:55.552 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:55.553 +05:30 [INF] Route matched with {action = "GetProducts", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(SareeGrace.Application.DTOs.ProductFilterDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:55.558 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-03-05 18:10:55.576 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:10:55.583 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:55.585 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API) in 29.4921ms
+2026-03-05 18:10:55.586 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:10:55.588 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 35.8712 ms
+2026-03-05 18:10:55.590 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 41.9365ms
+2026-03-05 18:10:58.729 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - null null
+2026-03-05 18:10:58.737 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:58.739 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:58.746 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:10:58.751 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([o].[TotalAmount]), 0.0)
+FROM [Orders] AS [o]
+WHERE [o].[PaymentStatus] = N'Paid'
+2026-03-05 18:10:58.755 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Customer'
+2026-03-05 18:10:58.760 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-03-05 18:10:58.766 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[StockCount] < 5
+2026-03-05 18:10:58.770 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+WHERE [o].[OrderStatus] IN (N'Pending', N'Confirmed')
+2026-03-05 18:10:58.774 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT TOP(@__p_0) [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:10:58.780 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.DashboardDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:58.782 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API) in 41.5804ms
+2026-03-05 18:10:58.784 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:58.786 +05:30 [INF] HTTP GET /api/admin/dashboard responded 200 in 48.8665 ms
+2026-03-05 18:10:58.788 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - null null
+2026-03-05 18:10:58.788 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - 200 null application/json; charset=utf-8 58.7013ms
+2026-03-05 18:10:58.791 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:58.797 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:10:58.802 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:10:58.806 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([o].[TotalAmount]), 0.0)
+FROM [Orders] AS [o]
+WHERE [o].[PaymentStatus] = N'Paid'
+2026-03-05 18:10:58.810 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Customer'
+2026-03-05 18:10:58.816 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-03-05 18:10:58.821 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[StockCount] < 5
+2026-03-05 18:10:58.826 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+WHERE [o].[OrderStatus] IN (N'Pending', N'Confirmed')
+2026-03-05 18:10:58.832 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT TOP(@__p_0) [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:10:58.835 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.DashboardDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:10:58.837 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API) in 37.9685ms
+2026-03-05 18:10:58.839 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:10:58.841 +05:30 [INF] HTTP GET /api/admin/dashboard responded 200 in 49.8688 ms
+2026-03-05 18:10:58.844 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - 200 null application/json; charset=utf-8 56.3036ms
+2026-03-05 18:11:04.636 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/orders?page=1&pageSize=50 - null null
+2026-03-05 18:11:04.640 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetAllOrders (SareeGrace.API)'
+2026-03-05 18:11:04.650 +05:30 [INF] Route matched with {action = "GetAllOrders", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders(Int32, Int32, System.String) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:11:04.664 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:11:04.692 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:11:04.700 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.OrderDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:11:04.704 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetAllOrders (SareeGrace.API) in 50.267ms
+2026-03-05 18:11:04.707 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetAllOrders (SareeGrace.API)'
+2026-03-05 18:11:04.708 +05:30 [INF] HTTP GET /api/admin/orders responded 200 in 69.0678 ms
+2026-03-05 18:11:04.709 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/orders?page=1&pageSize=50 - null null
+2026-03-05 18:11:04.712 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/orders?page=1&pageSize=50 - 200 null application/json; charset=utf-8 75.4071ms
+2026-03-05 18:11:04.714 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetAllOrders (SareeGrace.API)'
+2026-03-05 18:11:04.722 +05:30 [INF] Route matched with {action = "GetAllOrders", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrders(Int32, Int32, System.String) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:11:04.729 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:11:04.735 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:11:04.738 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.OrderDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:11:04.740 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetAllOrders (SareeGrace.API) in 14.3212ms
+2026-03-05 18:11:04.742 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetAllOrders (SareeGrace.API)'
+2026-03-05 18:11:04.744 +05:30 [INF] HTTP GET /api/admin/orders responded 200 in 30.0397 ms
+2026-03-05 18:11:04.748 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/orders?page=1&pageSize=50 - 200 null application/json; charset=utf-8 39.1544ms
+2026-03-05 18:11:06.184 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:11:06.189 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:06.191 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:11:06.198 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:11:06.205 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:06.208 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 13.2752ms
+2026-03-05 18:11:06.217 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:06.220 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:11:06.220 +05:30 [INF] HTTP GET /api/categories responded 200 in 31.1617 ms
+2026-03-05 18:11:06.223 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:06.228 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:11:06.226 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 42.2325ms
+2026-03-05 18:11:06.235 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:11:06.240 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:06.242 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 9.1899ms
+2026-03-05 18:11:06.243 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:06.245 +05:30 [INF] HTTP GET /api/categories responded 200 in 22.3498 ms
+2026-03-05 18:11:06.247 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 27.9014ms
+2026-03-05 18:11:10.140 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - null null
+2026-03-05 18:11:10.141 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:11:10.148 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:11:10.151 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:10.152 +05:30 [INF] Route matched with {action = "GetProducts", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(SareeGrace.Application.DTOs.ProductFilterDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:11:10.153 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:11:10.159 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-03-05 18:11:10.164 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:11:10.167 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:10.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:10.173 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:11:10.174 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 14.6117ms
+2026-03-05 18:11:10.181 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:10.176 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API) in 21.0367ms
+2026-03-05 18:11:10.183 +05:30 [INF] HTTP GET /api/categories responded 200 in 31.7586 ms
+2026-03-05 18:11:10.184 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:11:10.184 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:11:10.187 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 39.3387 ms
+2026-03-05 18:11:10.185 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - null null
+2026-03-05 18:11:10.186 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 45.3529ms
+2026-03-05 18:11:10.197 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:10.199 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 59.0792ms
+2026-03-05 18:11:10.203 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:11:10.206 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:11:10.211 +05:30 [INF] Route matched with {action = "GetProducts", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts(SareeGrace.Application.DTOs.ProductFilterDto) on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:11:10.216 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:11:10.217 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+2026-03-05 18:11:10.237 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:10.239 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:10.239 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 25.7202ms
+2026-03-05 18:11:10.244 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:10.244 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.PaginatedResult`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:11:10.245 +05:30 [INF] HTTP GET /api/categories responded 200 in 47.9127 ms
+2026-03-05 18:11:10.247 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API) in 31.5265ms
+2026-03-05 18:11:10.250 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 65.1769ms
+2026-03-05 18:11:10.252 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetProducts (SareeGrace.API)'
+2026-03-05 18:11:10.258 +05:30 [INF] HTTP GET /api/admin/products responded 200 in 55.5269 ms
+2026-03-05 18:11:10.263 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/products?page=1&pageSize=200&includeInactive=true - 200 null application/json; charset=utf-8 77.753ms
+2026-03-05 18:11:15.203 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - null null
+2026-03-05 18:11:15.209 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:11:15.212 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:11:15.217 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:11:15.222 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([o].[TotalAmount]), 0.0)
+FROM [Orders] AS [o]
+WHERE [o].[PaymentStatus] = N'Paid'
+2026-03-05 18:11:15.228 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Customer'
+2026-03-05 18:11:15.233 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-03-05 18:11:15.238 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[StockCount] < 5
+2026-03-05 18:11:15.242 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+WHERE [o].[OrderStatus] IN (N'Pending', N'Confirmed')
+2026-03-05 18:11:15.247 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT TOP(@__p_0) [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:11:15.251 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.DashboardDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:11:15.253 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API) in 37.584ms
+2026-03-05 18:11:15.255 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:11:15.257 +05:30 [INF] HTTP GET /api/admin/dashboard responded 200 in 49.5846 ms
+2026-03-05 18:11:15.258 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - null null
+2026-03-05 18:11:15.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - 200 null application/json; charset=utf-8 56.3693ms
+2026-03-05 18:11:15.266 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:11:15.271 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller SareeGrace.API.Controllers.AdminController (SareeGrace.API).
+2026-03-05 18:11:15.276 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+2026-03-05 18:11:15.281 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([o].[TotalAmount]), 0.0)
+FROM [Orders] AS [o]
+WHERE [o].[PaymentStatus] = N'Paid'
+2026-03-05 18:11:15.285 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] = N'Customer'
+2026-03-05 18:11:15.290 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-03-05 18:11:15.298 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[StockCount] < 5
+2026-03-05 18:11:15.302 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Orders] AS [o]
+WHERE [o].[OrderStatus] IN (N'Pending', N'Confirmed')
+2026-03-05 18:11:15.307 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CourierName], [o1].[CreatedAt], [o1].[DeliveredAt], [o1].[DiscountAmount], [o1].[EstimatedDelivery], [o1].[Notes], [o1].[OrderNumber], [o1].[OrderStatus], [o1].[PaymentId], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[ShippingAddressId], [o1].[ShippingCharge], [o1].[SubTotal], [o1].[TaxAmount], [o1].[TotalAmount], [o1].[TrackingNumber], [o1].[UpdatedAt], [o1].[UserId], [o0].[Id], [o0].[DiscountPercent], [o0].[ImageUrl], [o0].[OrderId], [o0].[ProductId], [o0].[ProductName], [o0].[Quantity], [o0].[TotalPrice], [o0].[UnitPrice]
+FROM (
+    SELECT TOP(@__p_0) [o].[Id], [o].[CouponCode], [o].[CourierName], [o].[CreatedAt], [o].[DeliveredAt], [o].[DiscountAmount], [o].[EstimatedDelivery], [o].[Notes], [o].[OrderNumber], [o].[OrderStatus], [o].[PaymentId], [o].[PaymentMethod], [o].[PaymentStatus], [o].[ShippingAddressId], [o].[ShippingCharge], [o].[SubTotal], [o].[TaxAmount], [o].[TotalAmount], [o].[TrackingNumber], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    ORDER BY [o].[CreatedAt] DESC
+) AS [o1]
+LEFT JOIN [OrderItems] AS [o0] ON [o1].[Id] = [o0].[OrderId]
+ORDER BY [o1].[CreatedAt] DESC, [o1].[Id]
+2026-03-05 18:11:15.312 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[SareeGrace.Application.DTOs.DashboardDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-05 18:11:15.314 +05:30 [INF] Executed action SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API) in 40.0379ms
+2026-03-05 18:11:15.317 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.AdminController.GetDashboard (SareeGrace.API)'
+2026-03-05 18:11:15.320 +05:30 [INF] HTTP GET /api/admin/dashboard responded 200 in 54.2123 ms
+2026-03-05 18:11:15.323 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/admin/dashboard - 200 null application/json; charset=utf-8 64.5525ms
+2026-03-05 18:11:21.392 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - null null
+2026-03-05 18:11:21.392 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - null null
+2026-03-05 18:11:21.396 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - null null
+2026-03-05 18:11:21.396 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:11:21.402 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:11:21.407 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:11:21.414 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:11:21.418 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:21.419 +05:30 [INF] Route matched with {action = "GetSpecialOffers", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSpecialOffers(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:11:21.420 +05:30 [INF] Route matched with {action = "GetFeaturedProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFeaturedProducts(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:11:21.422 +05:30 [INF] Route matched with {action = "GetNewArrivals", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNewArrivals(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:11:21.423 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:11:21.431 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsSpecialOffer] = CAST(1 AS bit) AND [p].[StockCount] > 0
+    ORDER BY [p].[DiscountPercent] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[DiscountPercent] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:21.432 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsFeatured] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:21.434 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsNewArrival] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:21.436 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:11:21.438 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.450 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.441 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.447 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.450 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API) in 22.2193ms
+2026-03-05 18:11:21.455 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API) in 24.8607ms
+2026-03-05 18:11:21.458 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API) in 25.7332ms
+2026-03-05 18:11:21.463 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/categories - null null
+2026-03-05 18:11:21.458 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - null null
+2026-03-05 18:11:21.462 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:11:21.452 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 17.967ms
+2026-03-05 18:11:21.470 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:11:21.471 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:11:21.475 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:21.482 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:11:21.483 +05:30 [INF] HTTP GET /api/products/special-offers responded 200 in 81.1252 ms
+2026-03-05 18:11:21.485 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:21.487 +05:30 [INF] HTTP GET /api/products/featured responded 200 in 80.1777 ms
+2026-03-05 18:11:21.488 +05:30 [INF] HTTP GET /api/products/new-arrivals responded 200 in 73.9741 ms
+2026-03-05 18:11:21.499 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - 200 null application/json; charset=utf-8 107.3833ms
+2026-03-05 18:11:21.541 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - 200 null application/json; charset=utf-8 145.3104ms
+2026-03-05 18:11:21.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - null null
+2026-03-05 18:11:21.489 +05:30 [INF] Route matched with {action = "GetAllCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategories() on controller SareeGrace.API.Controllers.CategoriesController (SareeGrace.API).
+2026-03-05 18:11:21.491 +05:30 [INF] Route matched with {action = "GetSpecialOffers", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSpecialOffers(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:11:21.495 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - 200 null application/json; charset=utf-8 102.453ms
+2026-03-05 18:11:21.497 +05:30 [INF] HTTP GET /api/categories responded 200 in 78.9245 ms
+2026-03-05 18:11:21.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - null null
+2026-03-05 18:11:21.567 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:11:21.571 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [c0].[Id], [c0].[Description], [c0].[DisplayOrder], [c0].[ImageUrl], [c0].[IsActive], [c0].[Name], [c0].[ParentCategoryId], [c0].[Slug], [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+FROM [Categories] AS [c]
+LEFT JOIN [Categories] AS [c0] ON [c].[Id] = [c0].[ParentCategoryId]
+LEFT JOIN [Products] AS [p] ON [c].[Id] = [p].[CategoryId]
+WHERE [c].[IsActive] = CAST(1 AS bit) AND [c].[ParentCategoryId] IS NULL
+ORDER BY [c].[DisplayOrder], [c].[Id], [c0].[Id]
+2026-03-05 18:11:21.574 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsSpecialOffer] = CAST(1 AS bit) AND [p].[StockCount] > 0
+    ORDER BY [p].[DiscountPercent] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[DiscountPercent] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:21.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 185.5836ms
+2026-03-05 18:11:21.586 +05:30 [INF] Executing endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:11:21.587 +05:30 [INF] Route matched with {action = "GetNewArrivals", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNewArrivals(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:11:21.591 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.CategoryDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.594 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.605 +05:30 [INF] Route matched with {action = "GetFeaturedProducts", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFeaturedProducts(Int32) on controller SareeGrace.API.Controllers.ProductsController (SareeGrace.API).
+2026-03-05 18:11:21.608 +05:30 [INF] Executed action SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API) in 39.1679ms
+2026-03-05 18:11:21.610 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsNewArrival] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:21.613 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API) in 41.6376ms
+2026-03-05 18:11:21.621 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.CategoriesController.GetAllCategories (SareeGrace.API)'
+2026-03-05 18:11:21.622 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[AverageRating], [p0].[BasePrice], [p0].[BlouseLength], [p0].[CategoryId], [p0].[Color], [p0].[CreatedAt], [p0].[Description], [p0].[DiscountPercent], [p0].[FabricType], [p0].[HasBlousePiece], [p0].[IsActive], [p0].[IsDeleted], [p0].[IsFeatured], [p0].[IsNewArrival], [p0].[IsSpecialOffer], [p0].[LastStockUpdate], [p0].[Length], [p0].[ManufactureDate], [p0].[Name], [p0].[Occasion], [p0].[Pattern], [p0].[ReviewCount], [p0].[SKU], [p0].[ShortDescription], [p0].[Slug], [p0].[StockCount], [p0].[UpdatedAt], [p0].[WashCare], [p0].[Weight], [p0].[Width], [c].[Id], [c].[Description], [c].[DisplayOrder], [c].[ImageUrl], [c].[IsActive], [c].[Name], [c].[ParentCategoryId], [c].[Slug], [p1].[Id], [p1].[AltText], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[ThumbnailUrl]
+FROM (
+    SELECT TOP(@__p_0) [p].[Id], [p].[AverageRating], [p].[BasePrice], [p].[BlouseLength], [p].[CategoryId], [p].[Color], [p].[CreatedAt], [p].[Description], [p].[DiscountPercent], [p].[FabricType], [p].[HasBlousePiece], [p].[IsActive], [p].[IsDeleted], [p].[IsFeatured], [p].[IsNewArrival], [p].[IsSpecialOffer], [p].[LastStockUpdate], [p].[Length], [p].[ManufactureDate], [p].[Name], [p].[Occasion], [p].[Pattern], [p].[ReviewCount], [p].[SKU], [p].[ShortDescription], [p].[Slug], [p].[StockCount], [p].[UpdatedAt], [p].[WashCare], [p].[Weight], [p].[Width]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[IsFeatured] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+) AS [p0]
+INNER JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id]
+2026-03-05 18:11:21.633 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.637 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetSpecialOffers (SareeGrace.API)'
+2026-03-05 18:11:21.638 +05:30 [INF] HTTP GET /api/categories responded 200 in 163.4254 ms
+2026-03-05 18:11:21.641 +05:30 [INF] Executing OkObjectResult, writing value of type 'SareeGrace.Application.DTOs.ApiResponse`1[[System.Collections.Generic.List`1[[SareeGrace.Application.DTOs.ProductDto, SareeGrace.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-05 18:11:21.643 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API) in 36.134ms
+2026-03-05 18:11:21.647 +05:30 [INF] HTTP GET /api/products/special-offers responded 200 in 165.4941 ms
+2026-03-05 18:11:21.648 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/categories - 200 null application/json; charset=utf-8 185.5718ms
+2026-03-05 18:11:21.650 +05:30 [INF] Executed action SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API) in 32.6615ms
+2026-03-05 18:11:21.652 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetNewArrivals (SareeGrace.API)'
+2026-03-05 18:11:21.654 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/special-offers?count=4 - 200 null application/json; charset=utf-8 196.7678ms
+2026-03-05 18:11:21.660 +05:30 [INF] Executed endpoint 'SareeGrace.API.Controllers.ProductsController.GetFeaturedProducts (SareeGrace.API)'
+2026-03-05 18:11:21.663 +05:30 [INF] HTTP GET /api/products/new-arrivals responded 200 in 96.0316 ms
+2026-03-05 18:11:21.668 +05:30 [INF] HTTP GET /api/products/featured responded 200 in 81.9499 ms
+2026-03-05 18:11:21.670 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/new-arrivals?count=4 - 200 null application/json; charset=utf-8 135.8955ms
+2026-03-05 18:11:21.673 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/products/featured?count=8 - 200 null application/json; charset=utf-8 139.1328ms
+2026-03-05 21:55:52.650 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:5001/1.0/upgrader/study-upgrade - application/json; charset=utf-8 118
+2026-03-05 21:55:52.672 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'https://hotfix-preprod-wu2.energyexemplar.com'. Did not match: validationParameters.ValidIssuer: 'SareeGrace' or validationParameters.ValidIssuers: 'null' or validationParameters.ConfigurationManager.CurrentConfiguration.Issuer: 'Null'. For more details, see https://aka.ms/IdentityModel/issuer-validation. 
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuerAsync(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.Tokens.InternalValidators.ValidateAfterSignatureFailed(SecurityToken securityToken, Nullable`1 notBefore, Nullable`1 expires, IEnumerable`1 audiences, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-03-05 21:55:52.729 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'https://hotfix-preprod-wu2.energyexemplar.com'. Did not match: validationParameters.ValidIssuer: 'SareeGrace' or validationParameters.ValidIssuers: 'null' or validationParameters.ConfigurationManager.CurrentConfiguration.Issuer: 'Null'. For more details, see https://aka.ms/IdentityModel/issuer-validation. 
+2026-03-05 21:55:52.730 +05:30 [INF] HTTP POST /1.0/upgrader/study-upgrade responded 404 in 71.1299 ms
+2026-03-05 21:55:52.740 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:5001/1.0/upgrader/study-upgrade - 404 0 null 90.0444ms
+2026-03-05 21:55:52.744 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:5001/1.0/upgrader/study-upgrade, Response status code: 404
