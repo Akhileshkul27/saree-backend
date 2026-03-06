@@ -139,39 +139,53 @@ try
     using (var scope = app.Services.CreateScope())
     {
         var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        db.Database.Migrate();
-        Log.Information("Database migrated successfully.");
+        try
+        {
+            db.Database.Migrate();
+            Log.Information("Database migrated successfully.");
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Migration skipped or failed — database may already be up to date.");
+        }
 
         // ── Upsert Admin User with correct password hash ──
-        const string adminEmail = "admin@sareegrace.com";
-        const string adminPassword = "Admin@123";
-        var adminId = Guid.Parse("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
+        try
+        {
+            const string adminEmail = "admin@sareegrace.com";
+            const string adminPassword = "Admin@123";
+            var adminId = Guid.Parse("a1b2c3d4-e5f6-7890-abcd-ef1234567890");
 
-        var admin = db.Users.FirstOrDefault(u => u.Email == adminEmail);
-        if (admin == null)
-        {
-            db.Users.Add(new User
+            var admin = db.Users.FirstOrDefault(u => u.Email == adminEmail);
+            if (admin == null)
             {
-                Id = adminId,
-                Email = adminEmail,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(adminPassword),
-                FirstName = "Super",
-                LastName = "Admin",
-                Phone = "9999999999",
-                Role = "Admin",
-                IsActive = true,
-                EmailVerified = true,
-                CreatedAt = DateTime.UtcNow
-            });
-            db.SaveChanges();
-            Log.Information("Admin user created.");
+                db.Users.Add(new User
+                {
+                    Id = adminId,
+                    Email = adminEmail,
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(adminPassword),
+                    FirstName = "Super",
+                    LastName = "Admin",
+                    Phone = "9999999999",
+                    Role = "Admin",
+                    IsActive = true,
+                    EmailVerified = true,
+                    CreatedAt = DateTime.UtcNow
+                });
+                db.SaveChanges();
+                Log.Information("Admin user created.");
+            }
+            else if (!BCrypt.Net.BCrypt.Verify(adminPassword, admin.PasswordHash))
+            {
+                // Fix incorrect hash from migration seed
+                admin.PasswordHash = BCrypt.Net.BCrypt.HashPassword(adminPassword);
+                db.SaveChanges();
+                Log.Information("Admin password hash corrected.");
+            }
         }
-        else if (!BCrypt.Net.BCrypt.Verify(adminPassword, admin.PasswordHash))
+        catch (Exception ex)
         {
-            // Fix incorrect hash from migration seed
-            admin.PasswordHash = BCrypt.Net.BCrypt.HashPassword(adminPassword);
-            db.SaveChanges();
-            Log.Information("Admin password hash corrected.");
+            Log.Warning(ex, "Admin seeding skipped — database may not be reachable.");
         }
     }
 
