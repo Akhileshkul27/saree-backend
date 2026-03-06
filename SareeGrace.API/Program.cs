@@ -196,15 +196,27 @@ try
     Directory.CreateDirectory(categoryImagesPath);
 
     // ──────────────────── Middleware Pipeline ────────────────────
-    if (app.Environment.IsDevelopment())
+    // Swagger enabled in all environments for debugging
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
     {
-        app.UseSwagger();
-        app.UseSwaggerUI(c =>
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "SareeGrace API v1");
+        c.RoutePrefix = "swagger";
+    });
+
+    // Global exception handler — returns JSON with error details
+    app.UseExceptionHandler(errApp =>
+    {
+        errApp.Run(async ctx =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "SareeGrace API v1");
-            c.RoutePrefix = "swagger";
+            ctx.Response.StatusCode = 500;
+            ctx.Response.ContentType = "application/json";
+            var feature = ctx.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
+            var msg = feature?.Error?.Message ?? "An unexpected error occurred";
+            Log.Error(feature?.Error, "Unhandled exception");
+            await ctx.Response.WriteAsJsonAsync(new { success = false, message = msg });
         });
-    }
+    });
 
     app.UseSerilogRequestLogging();
     app.UseCors("AllowReactApp");
