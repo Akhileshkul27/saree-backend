@@ -196,6 +196,9 @@ try
     Directory.CreateDirectory(categoryImagesPath);
 
     // ──────────────────── Middleware Pipeline ────────────────────
+    // CORS must be first — before exception handler, logging, auth, everything
+    app.UseCors("AllowReactApp");
+
     // Swagger enabled in all environments for debugging
     app.UseSwagger();
     app.UseSwaggerUI(c =>
@@ -219,7 +222,6 @@ try
     });
 
     app.UseSerilogRequestLogging();
-    app.UseCors("AllowReactApp");
     app.UseStaticFiles(); // Serves wwwroot/images for uploaded product images
 
     app.UseAuthentication();
