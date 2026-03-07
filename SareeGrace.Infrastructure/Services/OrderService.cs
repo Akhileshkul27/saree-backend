@@ -46,6 +46,7 @@ public class OrderService : IOrderService
             TaxAmount = taxAmount,
             TotalAmount = subTotal + shippingCharge + taxAmount,
             PaymentMethod = dto.PaymentMethod,
+            PaymentId = dto.RazorpayPaymentId,
             CouponCode = dto.CouponCode,
             Notes = dto.Notes,
             OrderStatus = "Confirmed",
