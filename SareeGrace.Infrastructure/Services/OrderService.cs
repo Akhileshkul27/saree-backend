@@ -33,7 +33,7 @@ public class OrderService : IOrderService
         }
 
         decimal subTotal = cartItems.Sum(c => c.Product.SellingPrice * c.Quantity);
-        decimal shippingCharge = subTotal >= 999 ? 0 : 79; // Free shipping over ₹999
+        decimal shippingCharge = subTotal >= 999 ? 0 : 0; // Free shipping over ₹999
         decimal taxAmount = Math.Round(subTotal * 0.05m, 2); // 5% GST
 
         var order = new Order
