@@ -139,7 +139,7 @@ public class OrderService : IOrderService
 
     public async Task<ApiResponse<PaginatedResult<OrderDto>>> GetAllOrdersAsync(int page = 1, int pageSize = 20, string? status = null)
     {
-        var query = _context.Orders.Include(o => o.Items).AsQueryable();
+        var query = _context.Orders.Include(o => o.Items).Include(o => o.User).AsQueryable();
         if (!string.IsNullOrEmpty(status))
             query = query.Where(o => o.OrderStatus == status);
 
@@ -163,7 +163,7 @@ public class OrderService : IOrderService
         var lowStock = await _context.Products.CountAsync(p => p.IsActive && p.StockCount < 5);
         var pending = await _context.Orders.CountAsync(o => o.OrderStatus == "Pending" || o.OrderStatus == "Confirmed");
 
-        var recentOrders = await _context.Orders.Include(o => o.Items)
+        var recentOrders = await _context.Orders.Include(o => o.Items).Include(o => o.User)
             .OrderByDescending(o => o.CreatedAt).Take(5).ToListAsync();
 
         return ApiResponse<DashboardDto>.SuccessResponse(new DashboardDto
@@ -182,6 +182,8 @@ public class OrderService : IOrderService
     {
         Id = o.Id,
         OrderNumber = o.OrderNumber,
+        CustomerName = o.User != null ? $"{o.User.FirstName} {o.User.LastName}".Trim() : "Unknown",
+        CustomerEmail = o.User?.Email ?? string.Empty,
         OrderStatus = o.OrderStatus,
         SubTotal = o.SubTotal,
         DiscountAmount = o.DiscountAmount,
