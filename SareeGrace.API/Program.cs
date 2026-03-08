@@ -49,7 +49,7 @@ try
     builder.Services.AddScoped<IWishlistService, WishlistService>();
     builder.Services.AddScoped<IAddressService, AddressService>();
     builder.Services.AddScoped<IReviewService, ReviewService>();
-    builder.Services.AddScoped<IImageService, LocalImageService>();
+    builder.Services.AddScoped<IImageService, AzureBlobImageService>();
 
     // ──────────────────── JWT Authentication ────────────────────
     var jwtKey = config["Jwt:Key"] ?? "SareeGrace_SuperSecret_Key_2024_Must_Be_At_Least_32_Chars!";
