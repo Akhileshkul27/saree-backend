@@ -1,3 +1,5 @@
+using System.IO.Compression;
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SareeGrace.Application.DTOs;
@@ -95,6 +97,97 @@ public class AdminController : BaseApiController
         if (rows.Count > 500)
             return BadRequest(ApiResponse<string>.FailResponse("Maximum 500 rows per import"));
         var result = await _productService.BulkCreateProductsAsync(rows);
+        return ApiResult(result);
+    }
+
+    /// <summary>
+    /// Bulk import products with images in one shot.
+    /// Accepts multipart/form-data: 'rows' (JSON array of BulkProductRowDto) + optional 'images' (.zip).
+    /// Image filenames in rows (e.g. "\images\products\R1.jpg") are matched by filename against zip
+    /// entries, uploaded to Azure Blob Storage, and the blob URL is substituted before product creation.
+    /// </summary>
+    [HttpPost("products/bulk-with-images")]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> BulkCreateWithImages([FromForm] string rows, IFormFile? images)
+    {
+        if (string.IsNullOrWhiteSpace(rows))
+            return BadRequest(ApiResponse<string>.FailResponse("No product rows provided"));
+
+        List<BulkProductRowDto>? productRows;
+        try
+        {
+            productRows = JsonSerializer.Deserialize<List<BulkProductRowDto>>(rows,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+        catch
+        {
+            return BadRequest(ApiResponse<string>.FailResponse("Invalid rows JSON — could not deserialize product rows"));
+        }
+
+        if (productRows == null || productRows.Count == 0)
+            return BadRequest(ApiResponse<string>.FailResponse("No rows provided"));
+        if (productRows.Count > 500)
+            return BadRequest(ApiResponse<string>.FailResponse("Maximum 500 rows per import"));
+
+        // ── Extract zip and upload images to blob storage ──
+        if (images != null && images.Length > 0)
+        {
+            var zipExt = Path.GetExtension(images.FileName).ToLowerInvariant();
+            if (zipExt != ".zip")
+                return BadRequest(ApiResponse<string>.FailResponse("The images file must be a .zip archive"));
+
+            var allowedImgExts = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { ".jpg", ".jpeg", ".png", ".webp" };
+
+            // Build filename → bytes lookup from the zip (key = filename only, not full path inside zip)
+            var zipEntries = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
+
+            using (var zipStream = images.OpenReadStream())
+            using (var archive = new ZipArchive(zipStream, ZipArchiveMode.Read))
+            {
+                foreach (var entry in archive.Entries)
+                {
+                    // entry.Name is just the filename; entry.FullName includes folder hierarchy
+                    if (string.IsNullOrEmpty(entry.Name)) continue;
+                    var entryExt = Path.GetExtension(entry.Name).ToLowerInvariant();
+                    if (!allowedImgExts.Contains(entryExt)) continue;
+                    if (entry.Length > 5 * 1024 * 1024) continue; // skip files over 5 MB
+
+                    using var entryStream = entry.Open();
+                    using var ms = new MemoryStream();
+                    await entryStream.CopyToAsync(ms);
+                    zipEntries[entry.Name] = ms.ToArray();
+                }
+            }
+
+            // For each row, replace image references with actual blob URLs
+            foreach (var row in productRows)
+            {
+                for (int i = 0; i < row.Images.Count; i++)
+                {
+                    var imgRef = row.Images[i]?.Trim();
+                    if (string.IsNullOrEmpty(imgRef)) continue;
+
+                    // Already a full URL — leave as-is
+                    if (imgRef.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+                        imgRef.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    // Normalise backslashes then extract just the filename
+                    var fileName = Path.GetFileName(imgRef.Replace('\\', '/'));
+                    if (string.IsNullOrEmpty(fileName)) continue;
+
+                    if (zipEntries.TryGetValue(fileName, out var imgBytes))
+                    {
+                        using var imgStream = new MemoryStream(imgBytes);
+                        var blobUrl = await _imageService.SaveImageAsync(imgStream, fileName, "products");
+                        row.Images[i] = blobUrl;
+                    }
+                    // If filename not found in zip, leave original value — BulkCreate will store it as-is
+                }
+            }
+        }
+
+        var result = await _productService.BulkCreateProductsAsync(productRows);
         return ApiResult(result);
     }
 
